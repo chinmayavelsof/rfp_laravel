@@ -1,0 +1,24 @@
+<header id="page-topbar">
+    <div class="navbar-header">
+        <div class="d-flex">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="{{ route('dashboard') }}" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="{{ asset('assets/images/velocity_logo.png') }}" alt="" height="40" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="{{ asset('assets/images/velocity_logo.png') }}" alt="" height="" />
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="d-flex pr-2">
+            <div class="dropdown d-inline-block">
+                <span class="d-none d-xl-inline-block ml-1">Welcome Henry</span>&nbsp;&nbsp;
+                <a class="" href="{{ route('logout') }}">Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
