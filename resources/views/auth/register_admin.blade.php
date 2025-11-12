@@ -13,61 +13,101 @@
                             <div class="col-12">
                                 <div class="text-primary p-4">
                                     <h5 class="text-primary">Welcome to RFP System!</h5>
-                                    <p>Sign in to continue</p>
+                                    <p>Create your admin account below</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-body pt-0">
-                        <div class="p-2">
-                            <form class="form-horizontal" action="index.html">
+                        <div class="p-4">
+                            {{-- Success & Error alerts --}}
+                            @if (session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if (session('error'))
+                                <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
 
-                                <div class="form-group">
-                                    <label for="firstname">First name<em>*</em></label>
-                                    <input type="text" class="form-control" id="firstname" placeholder="Enter Firstname">
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastname">Last Name<em>*</em></label>
-                                    <input type="text" class="form-control" id="lastname" placeholder="Enter Lastname">
-                                </div>
+                            {{-- Registration Form --}}
+                            <form id="adminRegisterForm" class="form-horizontal" method="POST" action="{{ route('admin.register.submit') }}">
+                                @csrf
 
-                                <div class="form-group">
-                                    <label for="username">Email<em>*</em></label>
-                                    <input type="text" class="form-control" id="email" placeholder="Enter Email">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="userpassword">Password<em>*</em></label>
-                                    <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="password">Confirm Password<em>*</em></label>
-                                    <input type="password" class="form-control" id="confirmpassword" placeholder="Enter Confirm Password">
+                                <div class="form-group mb-3">
+                                    <label for="firstname">First Name <em>*</em></label>
+                                    <input type="text" name="firstname" class="form-control" id="firstname"
+                                           placeholder="Enter Firstname" value="{{ old('firstname') }}">
+                                    @error('firstname')
+                                        <div class="text-danger small mt-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
+                                <div class="form-group mb-3">
+                                    <label for="lastname">Last Name <em>*</em></label>
+                                    <input type="text" name="lastname" class="form-control" id="lastname"
+                                           placeholder="Enter Lastname" value="{{ old('lastname') }}">
+                                    @error('lastname')
+                                        <div class="text-danger small mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="email">Email <em>*</em></label>
+                                    <input type="email" name="email" class="form-control" id="email"
+                                           placeholder="Enter Email" value="{{ old('email') }}">
+                                    @error('email')
+                                        <div class="text-danger small mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="password">Password <em>*</em></label>
+                                    <input type="password" name="password" class="form-control" id="password"
+                                           placeholder="Enter Password">
+                                    @error('password')
+                                        <div class="text-danger small mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="password_confirmation">Confirm Password <em>*</em></label>
+                                    <input type="password" name="password_confirmation" class="form-control"
+                                           id="password_confirmation" placeholder="Confirm Password">
+                                    @error('password_confirmation')
+                                        <div class="text-danger small mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
 
                                 <div class="mt-3">
-                                    <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Register</button>
+                                    <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">
+                                        Register
+                                    </button>
                                 </div>
 
                                 <div class="mt-4 text-center">
-                                    <a href="{{ route('vendor.register') }}" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Register as Vendor</a>
+                                    <a href="{{ route('vendor.register') }}" class="text-muted">
+                                        <i class="mdi mdi-account-plus mr-1"></i> Register as Vendor
+                                    </a>
                                 </div>
-                                <div class="mt-4 text-center">
-                                    <a href="{{ route('login') }}" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Already Registered? Log In</a>
+
+                                <div class="mt-3 text-center">
+                                    <a href="{{ route('login') }}" class="text-muted">
+                                        <i class="mdi mdi-lock mr-1"></i> Already Registered? Log In
+                                    </a>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
+
                 <div class="mt-5 text-center">
-                    <div>
-                        <p>&copy; Copyright <i class="mdi mdi-heart text-danger"></i> RFP System</p>
-                    </div>
+                    <p>&copy; Copyright <i class="mdi mdi-heart text-danger"></i> RFP System</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('assets/js/admin_registration_form_validation.js') }}"></script>
 @endsection

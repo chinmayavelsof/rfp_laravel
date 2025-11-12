@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-lg-9 text-right">
                                 <div class="headerButtons">
-                                    <a href="addrfp.html" class="btn btn-sm btn-success "><i class="mdi mdi-plus"></i> Add RFP</a>
+                                    <a href="{{route('admin.rfp.create')}}" class="btn btn-sm btn-success "><i class="mdi mdi-plus"></i> Add RFP</a>
                                 </div>
                             </div>
                         </div>

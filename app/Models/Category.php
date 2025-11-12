@@ -13,7 +13,7 @@ class Category extends Model
     protected $fillable = ['name','status'];
 
     public function rfps(){
-        return $this->hasMany(Rfp::class, 'category_id');
+        return $this->belongsTo(Vendor::class, 'vendor_id', 'id');
     }
 
     public function vendors(){

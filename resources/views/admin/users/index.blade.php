@@ -95,8 +95,8 @@
                                      <td>aman@gmail.com</td>
                                      <td><span class="badge badge-pill badge-success">Active</span></td>
                                      <td>
-                                         <a href="edituser.html" class="text-primary mr-2"><i class="mdi mdi-pencil"></i></a>
-                                         <a href="#" class="text-danger"><i class="mdi mdi-circle-off-outline"></i></a>
+                                         <span class="badge badge-pill badge-danger">Delete</span>
+                                         <span class="badge badge-pill badge-success">Approve</span>
                                      </td>
                                  </tr>
                                  <tr>
@@ -106,8 +106,8 @@
                                      <td>gagan456@gmail.com</td>
                                      <td><span class="badge badge-pill badge-success">Active</span></td>
                                      <td>
-                                         <a href="edituser.html" class="text-primary mr-2"><i class="mdi mdi-pencil"></i></a>
-                                         <a href="#" class="text-danger"><i class="mdi mdi-circle-off-outline"></i></a>
+                                         <span class="badge badge-pill badge-danger">Delete</span>
+                                         <span class="badge badge-pill badge-success">Approve</span>
                                      </td>
                                  </tr>
                                  <tr>
@@ -117,8 +117,8 @@
                                      <td>vinay009@gmail.com</td>
                                      <td><span class="badge badge-pill badge-success">Active</span></td>
                                      <td>
-                                         <a href="edituser.html" class="text-primary mr-2"><i class="mdi mdi-pencil"></i></a>
-                                         <a href="#" class="text-danger"><i class="mdi mdi-circle-off-outline"></i></a>
+                                         <span class="badge badge-pill badge-danger">Delete</span>
+                                         <span class="badge badge-pill badge-success">Approve</span>
                                      </td>
                                  </tr>
                                  <tr>
@@ -128,8 +128,8 @@
                                      <td>ravi@gmail.com</td>
                                      <td><span class="badge badge-pill badge-danger">Inactive</span></td>
                                      <td>
-                                         <a href="edituser.html" class="text-primary mr-2"><i class="mdi mdi-pencil"></i></a>
-                                         <a href="#" class="text-danger"><i class="mdi mdi-circle-off-outline"></i></a>
+                                         <span class="badge badge-pill badge-danger">Delete</span>
+                                         <span class="badge badge-pill badge-success">Approve</span>
                                      </td>
                                  </tr>
 

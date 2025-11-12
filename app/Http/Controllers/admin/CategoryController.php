@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RfpController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       return view('admin.rfp.index');
+        return view('admin.categories.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class RfpController extends Controller
      */
     public function create()
     {
-        return view('admin.rfp.create');
+        return view('admin.categories.create');
     }
 
     /**

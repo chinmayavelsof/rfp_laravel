@@ -61,7 +61,7 @@
                                     <td>000000000</td>
                                     <td><span class="badge badge-pill badge-success">Active</span></td>
                                     <td>
-                                        <a href="editvendor.html" class="text-primary mr-2" title="Edit"><i class="mdi mdi-pencil"></i></a>
+                                        <a href="{{route('admin.vendors.edit')}}" class="text-primary mr-2" title="Edit"><i class="mdi mdi-pencil"></i></a>
                                         <a href="#" class="text-danger"><i class="mdi mdi-circle-off-outline"></i></a>
                                     </td>
                                 </tr>
@@ -73,7 +73,7 @@
                                     <td>000000000</td>
                                     <td><span class="badge badge-pill badge-success">Active</span></td>
                                     <td>
-                                        <a href="editvendor.html" class="text-primary mr-2" title="Edit"><i class="mdi mdi-pencil"></i></a>
+                                        <a href="{{route('admin.vendors.edit')}}" class="text-primary mr-2" title="Edit"><i class="mdi mdi-pencil"></i></a>
                                         <a href="#" class="text-danger"><i class="mdi mdi-circle-off-outline"></i></a>
                                     </td>
                                 </tr>
@@ -97,7 +97,7 @@
                                     <td>000000000</td>
                                     <td><span class="badge badge-pill badge-danger">Inactive</span></td>
                                     <td>
-                                        <a href="editvendor.html" class="text-primary mr-2" title="Edit"><i class="mdi mdi-pencil"></i></a>
+                                        <a href="{{route('admin.vendors.edit')}}" class="text-primary mr-2" title="Edit"><i class="mdi mdi-pencil"></i></a>
                                         <a href="#" class="text-danger"><i class="mdi mdi-circle-off-outline"></i></a>
                                     </td>
                                 </tr>

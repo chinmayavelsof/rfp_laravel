@@ -8,7 +8,7 @@
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
                             <li>
-                                <a href="{{route('dashboard')}}" class="waves-effect">
+                                <a href="{{route('vendor.dashboard')}}" class="waves-effect">
                                     <i class="mdi mdi-file-document-box-outline"></i>
                                     <span>Dashboard</span>
                                 </a>

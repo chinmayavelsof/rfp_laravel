@@ -17,7 +17,7 @@ class Vendor extends Model
     }
 
     public function category(){
-        return $this->belongsTo(Category::class,'vendor_category_mapping');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
     public function rfp_quotes(){
