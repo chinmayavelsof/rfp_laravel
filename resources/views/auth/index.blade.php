@@ -20,21 +20,23 @@
                             </div>
                             <div class="card-body pt-0"> 
                                 <div class="p-2">
-                                    <form class="form-horizontal" action="index.html">
-        
+                                    {{-- Success & Error alerts --}}
+                                    @if (session('success'))
+                                        <div class="alert alert-success">{{ session('success') }}</div>
+                                    @endif
+                                    @if (session('error'))
+                                        <div class="alert alert-danger">{{ session('error') }}</div>
+                                    @endif
+                                    <form id="LoginForm" class="form-horizontal"  method="POST" action="{{ route('login.submit') }}">
+                                        @csrf
                                         <div class="form-group">
                                             <label for="username">Email</label>
-                                            <input type="text" class="form-control" id="email" placeholder="Enter Email">
+                                            <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email">
                                         </div>
                 
                                         <div class="form-group">
                                             <label for="userpassword">Password</label>
-                                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
-                                        </div>
-                
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                            <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
                                         </div>
                                         
                                         <div class="mt-3">
@@ -44,7 +46,7 @@
                                             <a href="{{ route('vendor.register') }}" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Register as Vendor</a>
                                         </div>
                                         <div class="mt-4 text-center">
-                                            <a href="#" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Forgot your password?</a>
+                                            <a href="{{ route('password.request') }}" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Forgot your password?</a>
                                         </div>
                                     </form>
                                 </div>
@@ -59,4 +61,7 @@
                 </div>
             </div>
         </div>
+@endsection
+@section('scripts')
+    <script src="{{ asset('assets/js/login_form_validation.js') }}"></script>
 @endsection

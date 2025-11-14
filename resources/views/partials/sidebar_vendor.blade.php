@@ -14,31 +14,10 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('admin.vendors.index')}}" class="waves-effect">
+                                <a href="{{route('vendor.RfpForQuote')}}" class="waves-effect">
                                     <i class="mdi mdi-receipt"></i>
-                                    <span>Vendors</span>
+                                    <span>RFP For Quote</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.rfp.index')}}" class="waves-effect">
-                                    <i class="mdi mdi-flip-vertical"></i>
-                                    <span>RFP Lists</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.users.index')}}" class="waves-effect">
-                                    <i class="mdi mdi-apps"></i>
-                                    <span>User Management</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.categories.index')}}" class="waves-effect">
-                                    <i class="mdi mdi-weather-night"></i>
-                                    <span>Categories</span>
-                                </a>
-                            </li>
-
                         </ul>
 
                     </div>

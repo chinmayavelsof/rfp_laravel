@@ -5,8 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminRegisterRequest;
 use App\Models\User;
-use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -24,20 +24,19 @@ class AdminController extends Controller
                 'lastname' => $request->lastname,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'role' => 'admin',
                 'status' => 'Inactive'
             ]);
-
+            $user->assignRole('admin');
+            Auth::login($user);
             // Redirect to dashboard with a success message
             return redirect()
-                ->route('dashboard')
+                ->route('admin.dashboard')
                 ->with('success', 'Admin registered successfully!');
 
         } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage()
-            ], 500);
+            return redirect()
+                ->route('admin.dashboard')
+                ->with('error', 'Something went wrong please try again later.');
         }
     }
 }

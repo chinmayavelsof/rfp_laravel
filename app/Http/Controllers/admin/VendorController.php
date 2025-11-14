@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Vendor;
 use App\Models\VendorCategoryMapping;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -43,9 +44,9 @@ class VendorController extends Controller
                 'lastname' => $request->lastname,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'role' => 'vendor',
             ]);
-
+            $user->assignRole('vendor');
+            Auth::login($user);
             // 2️. Create vendor record
             $vendor = Vendor::create([
                 'user_id' => $user->id,
@@ -72,19 +73,17 @@ class VendorController extends Controller
 
             DB::commit();
 
-            // Success response
-            return response()->json([
-                'success' => true,
-                'redirect_url' => route('vendor.dashboard')
-            ]);
+            // Redirect to dashboard with a success message
+            return redirect()
+                ->route('vendor.dashboard')
+                ->with('success', 'Vendor registered successfully!');
 
         } catch (\Exception $e) {
             DB::rollBack();
 
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage()
-            ], 500);
+            return redirect()
+                ->route('vendor.dashboard')
+                ->with('Error', 'Something went wrong please try again later.');
         }
     }
 

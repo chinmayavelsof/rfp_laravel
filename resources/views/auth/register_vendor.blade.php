@@ -21,6 +21,13 @@
 
                     <div class="card-body pt-0">
                         <div class="p-4">
+                            {{-- Success & Error alerts --}}
+                            @if (session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if (session('error'))
+                                <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
                             <form id="vendorRegisterForm" method="POST" action="{{ route('vendor.register.submit') }}">
                                 @csrf
                                 <div class="row">

@@ -3,7 +3,7 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="{{ route('dashboard') }}" class="logo logo-light">
+                <a href="" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ asset('assets/images/velocity_logo.png') }}" alt="" height="40" />
                     </span>
@@ -16,7 +16,8 @@
 
         <div class="d-flex pr-2">
             <div class="dropdown d-inline-block">
-                <span class="d-none d-xl-inline-block ml-1">Welcome Henry</span>&nbsp;&nbsp;
+                
+                <span class="d-none d-xl-inline-block ml-1">Welcome{{ Auth::user()->firstname ? ' ' . Auth::user()->firstname : '' }}</span>&nbsp;&nbsp;
                 <a class="" href="{{ route('logout') }}">Logout</a>
             </div>
         </div>
